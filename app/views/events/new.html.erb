@@ -1,0 +1,6 @@
+<%= form_with model: @event do |f| %>
+    <%= f.date_field :event_date %>
+    <%= f.submit 'Submit' %>
+<% end %>
+
+<%= current_user.id %>
