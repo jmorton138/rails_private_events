@@ -1,1 +1,7 @@
-hello rails
+
+
+<ul>
+    <% @events.each do |event| %>
+        <li><%= event.event_date %></li>
+    <% end %>
+</ul>
