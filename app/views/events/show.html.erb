@@ -3,4 +3,14 @@
     Name: <%= @event.name %>
     Date:<%= @event.event_date %>
     Creator: <%= @event.creator %>
+    <%= link_to 'Attend', attend_event_path %>
+</div>
+<div>
+    Attendees:
+    <%  @event.event_attendees.each do |a| %>
+    <ul>
+        <li><%= a.email %></li>
+    
+    </ul>
+    <% end %>
 </div>

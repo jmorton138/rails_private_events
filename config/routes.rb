@@ -3,9 +3,17 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  resources :events do
+    member do
+      get 'attend'
+    end
+  end
+
+  resources :users 
+
+
+  resources :event_attendings, only: [:new, :create]
   
-  resources :events
-  resources :users
   root "events#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
