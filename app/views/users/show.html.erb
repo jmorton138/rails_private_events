@@ -6,5 +6,13 @@
 
 
 <%= @user.email %>
+Events attending:
+<div>
+    <% @user.attended_events.each do |event| %>
+        <ul>
+            <li>Name: <%= event.name %>, Date: <%= event.event_date %></li>
+        </ul>
+    <% end %>
+</div>
 
 
