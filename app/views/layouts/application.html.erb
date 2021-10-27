@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <nav>
+      <div>
+        <%= link_to 'Home', events_path %>
+      </div>
+      <div>
+        <%= link_to 'User Profile', user_path(current_user) %>
+      </div>
+      <div>
+        <%= link_to 'Create New Event', new_event_path %>
+      </div>
+      <div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
