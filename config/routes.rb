@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get 'attend'
+      get 'cancel_attend'
     end
   end
 

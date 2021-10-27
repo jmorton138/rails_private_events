@@ -52,6 +52,15 @@ class EventsController < ApplicationController
         redirect_to event_path
     end
 
+    def cancel_attend
+        @event = Event.find(params[:id])
+        @event_attending = EventAttending.where(attended_event_id: @event.id, event_attendee_id: current_user.id)[0]
+        #= current_user.attended_events.where(event_attended: @event )
+        @event_attending.destroy
+        redirect_to event_path
+
+    end
+
     private
 
     def event_params
