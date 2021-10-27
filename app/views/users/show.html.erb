@@ -1,7 +1,7 @@
 <%= @user.email %>'s created events
 <ul>
     <% @events.each do |event| %>
-        <li>Name: <%= event.name %>: <%= event.event_date %></li>
+        <li>Name: <%= event.name %>: <%= event.event_date %>  <%= link_to 'See event', event_path(event) %></li>
     <% end %>
 </ul>
 
@@ -12,7 +12,7 @@ Past Events attended:
 
     <% @user.attended_events.each do |event| %>
         <% if event.event_date < Date.today %>
-        <li>Name: <%= event.name %>, Date: <%= event.event_date %></li>
+        <li>Name: <%= event.name %>, Date: <%= event.event_date %> <%= link_to 'See event', event_path(event) %></li>
         <% end %>
     <% end %>
     </ul>
@@ -23,7 +23,7 @@ Future Events:
 
     <% @user.attended_events.each do |event| %>
         <% if event.event_date > Date.today %>
-        <li>Name: <%= event.name %>, Date: <%= event.event_date %></li>
+        <li>Name: <%= event.name %>, Date: <%= event.event_date %>  <%= link_to 'See event', event_path(event) %></li>
         <% end %>
     <% end %>
     </ul>

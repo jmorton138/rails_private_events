@@ -2,14 +2,14 @@
 Past Events
 <ul>
     <% @past_events.each do |event| %>
-        <li><%= event.name %>: <%= event.event_date %><%= link_to 'attend event', event_path(event) %></li>
+        <li><%= event.name %>: <%= event.event_date %>  <%= link_to 'See event', event_path(event) %></li>
     <% end %>
 </ul>
 
 Future Events
 <ul>
         <% @future_events.each do |event| %>
-            <li><%= event.name %>: <%= event.event_date %><%= link_to 'attend event', event_path(event) %></li>
+            <li><%= event.name %>: <%= event.event_date %>  <%= link_to 'See event', event_path(event) %></li>
         <% end %>
 </ul>
 

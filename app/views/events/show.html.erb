@@ -1,14 +1,14 @@
 
 <div>
-    Name: <%= @event.name %>
+    <div>
+        Name: <%= @event.name %>
+    </div>
+    <div>
     Date:<%= @event.event_date %>
-    Creator: <%= @event.creator %>
-    <% if @event.event_attendees.include?(current_user) %>
-        <%= link_to 'Cancel attendance', cancel_attend_event_path %>
+    <div>
+        Creator: <%= @event.creator.email %>
+    </div>
 
-    <% else %>
-        <%= link_to 'Attend', attend_event_path %>
-    <% end %>
 
     <% if @event.creator == current_user %>
         <%= link_to 'Edit Event', edit_event_path %>
@@ -24,3 +24,9 @@
     </ul>
     <% end %>
 </div>
+<% if @event.event_attendees.include?(current_user) %>
+<%= link_to 'Cancel attendance', cancel_attend_event_path %>
+
+<% else %>
+<%= link_to 'Attend', attend_event_path %>
+<% end %>
