@@ -1,9 +1,16 @@
 
-
+Past Events
 <ul>
-    <% @events.each do |event| %>
+    <% @past_events.each do |event| %>
         <li><%= event.name %>: <%= event.event_date %><%= link_to 'attend event', event_path(event) %></li>
     <% end %>
+</ul>
+
+Future Events
+<ul>
+        <% @future_events.each do |event| %>
+            <li><%= event.name %>: <%= event.event_date %><%= link_to 'attend event', event_path(event) %></li>
+        <% end %>
 </ul>
 
 <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
