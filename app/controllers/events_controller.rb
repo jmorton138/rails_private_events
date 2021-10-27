@@ -25,6 +25,27 @@ class EventsController < ApplicationController
         end
     end
 
+    def edit
+        @event = Event.find(params[:id])
+    end
+
+    def update
+        @event = Event.find(params[:id])
+
+        if @event.update(event_params)
+            redirect_to event_path
+        else
+            render :edit
+        end
+
+    end
+
+    def destroy
+        @event = Event.find(params[:id])
+        @event.destroy
+        redirect_to events_path
+    end
+
     def attend
         @event = Event.find(params[:id])
         current_user.attended_events << @event
