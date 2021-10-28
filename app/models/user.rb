@@ -6,9 +6,7 @@ class User < ApplicationRecord
   
   has_many :event_attendings, foreign_key: :event_attendee_id
   has_many :attended_events, through: :event_attendings
-
- 
-
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

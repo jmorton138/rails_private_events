@@ -8,8 +8,6 @@ class Event < ApplicationRecord
     scope :past, ->{ where("event_date < ?", Date.today) }
     scope :future, ->{ where("event_date > ?", Date.today) }
 
-    
-
     # def self.past
     #     events = self.all.map do |event| 
     #         event if event.event_date < Date.today
