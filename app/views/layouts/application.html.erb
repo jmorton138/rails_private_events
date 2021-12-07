@@ -26,6 +26,9 @@
               <%= link_to 'Create New Event', new_event_path %>
             </div>
             <div class="nav-link">
+              <%= link_to 'Invitations', invitations_path %>
+            </div>
+            <div class="nav-link">
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
             </div>
           <% end %>

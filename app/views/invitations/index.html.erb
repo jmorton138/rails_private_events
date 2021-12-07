@@ -1,5 +1,34 @@
-<% @invitations.each do |invite| %>
-    <% if invite.accepted == nil %>
-        <%= invite.event %>
+<div>
+    <h1>Pending:</h1>
+    <% @invitations.each do |invite| %>
+        <% if invite.accepted == nil %>
+            <%= invite.event %>
+            <%= invite.event.creator.email %>
+            <button>Accept</button>
+            <button>Reject</button>
+        <% end %>
     <% end %>
-<% end %>
+</div>
+
+<div>
+    <h1>Accepted:</h1>
+    <% @invitations.each do |invite| %>
+        <% if invite.accepted == true %>
+            <%= invite.event %>
+            <%= invite.event.creator.email %>
+            <button>Accept</button>
+            <button>Reject</button>
+        <% end %>
+    <% end %>
+</div>
+<div>
+    <h1>Rejected:</h1>
+    <% @invitations.each do |invite| %>
+        <% if invite.accepted == false %>
+            <%= invite.event %>
+            <%= invite.event.creator.email %>
+            <button>Accept</button>
+            <button>Reject</button>
+        <% end %>
+    <% end %>
+</div>
