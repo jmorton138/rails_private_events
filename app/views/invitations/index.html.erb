@@ -1,0 +1,5 @@
+<% @invitations.each do |invite| %>
+    <% if invite.accepted == nil %>
+        <%= invite.event %>
+    <% end %>
+<% end %>

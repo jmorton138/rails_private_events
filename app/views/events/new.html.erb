@@ -1,7 +1,6 @@
 <%= form_with model: @event do |f| %>
-    <%= f.text_field :name %>
-    <%= f.date_field :event_date %>
+    <%= f.text_field :name, required: true %>
+    <%= f.date_field :event_date, required: true %>
     <%= f.submit 'Submit' %>
 <% end %>
 
-<%= current_user.id %>

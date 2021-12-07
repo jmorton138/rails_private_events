@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :users 
-
+  resources :invitations
 
   resources :event_attendings, only: [:new, :create]
   
