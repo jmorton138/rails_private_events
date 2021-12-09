@@ -1,4 +1,4 @@
-<%= @user.email %>'s created events
+<%= @user.first_name %> <%= @user.last_name %>'s created events
 <ul>
     <% @events.each do |event| %>
         <li>Name: <%= event.name %>: <%= event.event_date %>  <%= link_to 'See event', event_path(event) %></li>
