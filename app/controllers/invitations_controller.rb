@@ -9,7 +9,6 @@ class InvitationsController < ApplicationController
     end
 
     def create
-        #creates an Invitation.new for each user checks
         @event = Event.find(params[:event_id])
         @invites = params[:invitee_ids]
         @invites.each do |invite|
@@ -21,8 +20,20 @@ class InvitationsController < ApplicationController
         end
 
         redirect_to event_path(@event.id)
-
     end
+
+    def reject
+        @invitation = Invitation.find(params[:id])
+        @invitation.accepted = false
+        @invitation.save
+        redirect_to invitations_path
+    end
+
+    # def accept_invite
+    #     @invitation.accepted = true
+    #     @invitation.save
+    #     # update event attendings
+    # end
 
   
 end

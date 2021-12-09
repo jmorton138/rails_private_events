@@ -4,7 +4,7 @@
         <% if invite.accepted == nil %>
             <%= invite.event %>
             <%= invite.event.creator.email %>
-            <button>Accept</button>
+            <%= link_to 'Reject', reject_invitation_path(invite.id) %>
             <button>Reject</button>
         <% end %>
     <% end %>

@@ -4,15 +4,22 @@ Rails.application.routes.draw do
   }
 
   resources :events do
-    resources :invitations, only: [:new, :create]
     member do
       get 'attend'
       get 'cancel_attend'
     end
+    resources :invitations, only: [:new, :create]
+
+
   end
 
   resources :users 
-  resources :invitations, only: [:index]
+  resources :invitations, only: [:index] do
+    member do
+      get 'reject'
+    end
+  end
+  
 
   resources :event_attendings, only: [:new, :create]
   
