@@ -2,17 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.events {
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    grid-gap: 30px;
-    img {
-        height: 300px;
-        width: 100%;
-        background-position: center;
-    }
-    .container {
-        padding: 20px;
-        border: 1px solid black;
+// .events {
+//     display: grid;
+//     grid-template-columns: repeat(3 , 1fr);
+//     grid-gap: 30px;
+//     img {
+//         height: 300px;
+//         width: 100%;
+//         background-position: center;
+//     }
+//     .container {
+//         padding: 20px;
+//         border: 1px solid black;
+//     }
+// }
+
+.form {
+    border: 1px solid rgb(255, 30, 0)red;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 70px;
+    margin: 100px 25% !important; 
+
+    form {
+        input {
+            padding: 15px;
+            margin: 20px;
+            display: block;
+            border-radius: 8px;
+        }
     }
 }

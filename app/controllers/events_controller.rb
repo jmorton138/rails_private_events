@@ -69,4 +69,3 @@ class EventsController < ApplicationController
     end
 end
 
-# && @event.invitations.include?(current_user) 

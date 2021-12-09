@@ -1,3 +1,18 @@
 // Place all the styles related to the Invitations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+form {
+    display: grid;
+    margin: 100px 25%;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 20px;
+    font-size: 30px;
+    input[type=checkbox] {
+        margin-left: 12px;
+        margin-top: 12px;
+        transform: scale(3);
+    }
+
+
+}

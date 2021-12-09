@@ -1,6 +1,10 @@
-<%= form_with model: @event do |f| %>
-    <%= f.text_field :name, required: true %>
-    <%= f.date_field :event_date, required: true %>
-    <%= f.submit 'Submit' %>
-<% end %>
+<div class="wrapper form">
+    <h1>Create a new event</h1>
+    <%= form_with model: @event do |f| %>
+        <%= f.text_field :name, required: true %>
+        <%= f.date_field :event_date, required: true %>
+        <%= f.file_field :image %>
+        <%= f.submit 'Submit' %>
+    <% end %>
+</div>
 

@@ -15,11 +15,24 @@
  */
 * {
     font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid red;
 
 }
 body {
     margin: 0;
 }
+
+a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px grey;
+
+}
+
+
 
 nav {
     font-size: 30px;
@@ -38,6 +51,8 @@ nav {
 .nav-link a {
     color: white;
     text-decoration: none;
+    font-weight: 300;
+    box-shadow: none;
 }
 
 .card {
@@ -48,4 +63,67 @@ nav {
 
 .wrapper {
     margin: 100px 200px;
+}
+
+.invite-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.invite {
+    padding: 10px 20px;
+
+}
+
+.reject-btn {
+    background: linear-gradient(rgb(255, 30, 0) 50%, rgba(255, 68, 0, 0.918));
+
+}
+.reject-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.accept-btn {
+    background-color: teal;
+}
+
+.accept-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap: 30px;
+
+}
+
+.events img {
+    height: 300px;
+    width: 100%;
+    background-position: center;
+}
+
+.events .container {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.evnt-info {
+    display: block;
+}
+
+input[type=submit] {
+    padding: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(95, 3, 3);
 }
