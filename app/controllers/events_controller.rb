@@ -2,9 +2,9 @@ class EventsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @events = Event.all
-        @past_events = Event.past
-        @future_events = Event.future
+        @events = Event.where(private: true)
+        @past_events = Event.past.where(private: nil).or(Event.past.where(private: false))
+        @future_events = Event.future.where(private: nil).or(Event.past.where(private: false))
     end
 
     def show

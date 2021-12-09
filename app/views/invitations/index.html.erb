@@ -1,34 +1,62 @@
-<div>
-    <h1>Pending:</h1>
-    <% @invitations.each do |invite| %>
-        <% if invite.accepted == nil %>
-            <%= invite.event %>
-            <%= invite.event.creator.email %>
-            <%= link_to 'Reject', reject_invitation_path(invite.id) %>
-            <%= link_to 'Accept', accept_invitation_path(invite.id) %>
-        <% end %>
-    <% end %>
-</div>
 
-<div>
-    <h1>Accepted:</h1>
-    <% @invitations.each do |invite| %>
-        <% if invite.accepted == true %>
-            <%= invite.event %>
-            <%= invite.event.creator.email %>
-            <button>Accept</button>
-            <button>Reject</button>
+<div class="wrapper">
+    <div>
+        <h1>Pending:</h1>
+
+    </div>
+
+    <div class="events">
+        <% @invitations.each do |invite| %>
+            <% if invite.accepted == nil %>
+            <div class="card">
+                <img class="event-image" src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="container">
+                    <h2><%= invite.event.name %></h2>
+                    <h3>Date: <%= invite.event.event_date %></h3>
+                    <%= link_to 'Reject', reject_invitation_path(invite.id) %>
+                    <%= link_to 'Accept', accept_invitation_path(invite.id) %>
+                    <%= link_to 'See event', event_path(invite.event) %>
+                </div>
+            </div>
+            <% end %>
         <% end %>
-    <% end %>
-</div>
-<div>
-    <h1>Rejected:</h1>
-    <% @invitations.each do |invite| %>
-        <% if invite.accepted == false %>
-            <%= invite.event %>
-            <%= invite.event.creator.email %>
-            <button>Accept</button>
-            <button>Reject</button>
+    </div>
+    <div>
+        <h1>Accepted:</h1>
+    </div>
+    <div class="events">
+        <% @invitations.each do |invite| %>
+            <% if invite.accepted == true %>
+            <div class="card">
+                <img class="event-image" src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="container">
+                    <h2><%= invite.event.name %></h2>
+                    <h3>Date: <%= invite.event.event_date %></h3>
+                    <%= link_to 'Reject', reject_invitation_path(invite.id) %>
+                    <%= link_to 'Accept', accept_invitation_path(invite.id) %>
+                    <%= link_to 'See event', event_path(invite.event) %>
+                </div>
+            </div>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
+    <div>
+        <h1>Rejected:</h1>
+    </div>
+    <div class="events">
+        <% @invitations.each do |invite| %>
+            <% if invite.accepted == false %>
+            <div class="card">
+                <img class="event-image" src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="container">
+                    <h2><%= invite.event.name %></h2>
+                    <h3>Date: <%= invite.event.event_date %></h3>
+                    <%= link_to 'Reject', reject_invitation_path(invite.id) %>
+                    <%= link_to 'Accept', accept_invitation_path(invite.id) %>
+                    <%= link_to 'See event', event_path(invite.event) %>
+                </div>
+            </div>
+            <% end %>
+        <% end %>
+    </div>
 </div>
