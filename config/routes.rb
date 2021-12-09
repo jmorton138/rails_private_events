@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :invitations, only: [:index] do
     member do
       get 'reject'
+      get 'accept'
     end
   end
   

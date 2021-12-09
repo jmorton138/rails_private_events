@@ -29,11 +29,15 @@ class InvitationsController < ApplicationController
         redirect_to invitations_path
     end
 
-    # def accept_invite
-    #     @invitation.accepted = true
-    #     @invitation.save
-    #     # update event attendings
-    # end
+    def accept
+        @invitation = Invitation.find(params[:id])
+        @invitation.accepted = true
+        @invitation.save
+        @event = Event.find(@invitation.event_id)
+        if current_user.attended_events << @event
+            redirect_to invitations_path
+        end
+    end
 
   
 end
