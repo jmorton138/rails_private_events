@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 
     def show
         @event = Event.find(params[:id])
+        @invitation = @event.invitations.where(invitee_id: current_user.id)[0]
     end
 
     def new
@@ -67,3 +68,5 @@ class EventsController < ApplicationController
         params.require(:event).permit(:event_date, :name)
     end
 end
+
+# && @event.invitations.include?(current_user) 
