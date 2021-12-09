@@ -1,0 +1,5 @@
+<%= form_with url: event_invitations_path, method: :post do |form| %>
+    <%= form.collection_check_boxes :invitee_ids, User.order(:email), :id, :email, include_hidden: false %>
+    <%= submit_tag("Send invite(s)") %>
+<% end %>
+
