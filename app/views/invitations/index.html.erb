@@ -13,11 +13,6 @@
                 <div class="container">
                     <h2><%= invite.event.name %></h2>
                     <h3>Date: <%= invite.event.event_date %></h3>
-                    <div class="invite-btns">
-                        <%= link_to 'Reject', reject_invitation_path(invite.id), class: "invite reject-btn btn" %>
-                        <%= link_to 'Accept', accept_invitation_path(invite.id), class: "invite accept-btn btn" %>
-                    </div>
-
                     <%= link_to 'See event', event_path(invite.event), class: "evnt-info" %>
                 </div>
             </div>
@@ -35,7 +30,6 @@
                 <div class="container">
                     <h2><%= invite.event.name %></h2>
                     <h3>Date: <%= invite.event.event_date %></h3>
-                    <%= link_to 'Reject', reject_invitation_path(invite.id), class: "invite reject-btn btn" %>
                     <%= link_to 'See event', event_path(invite.event), class: "evnt-info" %>
                 </div>
             </div>
@@ -53,7 +47,6 @@
                 <div class="container">
                     <h2><%= invite.event.name %></h2>
                     <h3>Date: <%= invite.event.event_date %></h3>
-                    <%= link_to 'Accept', accept_invitation_path(invite.id), class: "invite accept-btn btn" %>
                     <%= link_to 'See event', event_path(invite.event), class: "evnt-info" %>
                 </div>
             </div>

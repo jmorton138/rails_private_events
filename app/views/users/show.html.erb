@@ -1,5 +1,12 @@
-<%= @user.first_name %> <%= @user.last_name %>'s created events
 <div class="wrapper">
+    <div class="profile-nav">
+        <div class="profile-nav-item">Your Events</div>
+        <div class="profile-nav-item">Upcoming Events</div>
+        <div class="profile-nav-item">Attended Events</div>
+    </div>
+
+    <h1><%= @user.first_name %> <%= @user.last_name %>'s created events</h1>
+
     <div class="events">
         <% @events.each do |event| %>
             <div class="card">
@@ -14,35 +21,23 @@
     </div>
 
 <% if @user.attended_events.length > 0 %>
-    Past Events attended:
-    <div class="events">
-  
-        <% @user.attended_events.each do |event| %>
-            <% if event.event_date < Date.today %>
+    <div class="upcoming-container">
+        <h1>Upcoming Events:(public and invited distinction?)</h1>
+        <div class="events">
+    
+            <% @user.attended_events.each do |event| %>
+                <% if event.event_date > Date.today %>
                 <div class="card">
-                    <img class="event-image" src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-                    <div class="container">
-                        <h2><%= event.name %></h2>
-                        <h3>Date: <%= event.event_date %></h3>
-                        <%= link_to 'See event', event_path(event), class: "evnt-info" %>
-                    </div>
+                <img class="event-image" src="https://images.pexels.com/photos/10002692/pexels-photo-10002692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="container">
+                    <h2><%= event.name %></h2>
+                    <h3>Date: <%= event.event_date %></h3>
+                    <%= link_to 'See event', event_path(event), class: "evnt-info" %>
                 </div>
-            <% end %>
-        <% end %>
- 
-    </div>
-
-    Future Events:(public and invited distinction?)
-    <div class="events">
- 
-        <% @user.attended_events.each do |event| %>
-            <% if event.event_date > Date.today %>
-            <div>
-                Name: <%= event.name %>, Date: <%= event.event_date %>  <%= link_to 'See event', event_path(event) %>
             </div>
+                <% end %>
             <% end %>
-        <% end %>
- 
+        </div>
     </div>
 <% end %>
 

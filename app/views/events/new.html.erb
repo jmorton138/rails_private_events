@@ -3,6 +3,7 @@
     <%= form_with model: @event do |f| %>
         <%= f.text_field :name, required: true %>
         <%= f.date_field :event_date, required: true %>
+        <%= f.text_field :details, required: true %>
         <%= f.file_field :image %>
         <%= f.submit 'Submit' %>
     <% end %>

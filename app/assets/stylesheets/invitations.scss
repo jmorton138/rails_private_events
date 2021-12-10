@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-form {
+.invites-frm {
     display: grid;
     margin: 100px 25%;
     grid-template-columns: 1fr 5fr;
@@ -13,6 +13,7 @@ form {
         margin-top: 12px;
         transform: scale(3);
     }
+    
 
 
 }
