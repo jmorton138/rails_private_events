@@ -9,6 +9,8 @@ class Event < ApplicationRecord
     scope :future, ->{ where("event_date > ?", Date.today) }
 
     has_many :invitations
+
+    has_one_attached :event_image
     # def self.past
     #     events = self.all.map do |event| 
     #         event if event.event_date < Date.today

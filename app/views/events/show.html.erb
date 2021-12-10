@@ -1,7 +1,9 @@
 <div class="wrapper event-show">
-    <div>
         <div>
             <h1><%= @event.name %></h1> 
+        </div>
+        <div class="evnt-img">
+            <%= image_tag(@event.event_image, style:'width:100%') %>
         </div>
         <% if @event.private == nil || @event.private == false %>
         <% if @event.event_attendees.include?(current_user) %>
@@ -43,7 +45,7 @@
             <% end %>
         </div>
 
-    </div>
+
 
     <% if @event.event_attendees.length > 0 %>
         <div>
@@ -56,6 +58,6 @@
             <% end %>
         </div>
     <% end %>
-
+                
 
 </div>
