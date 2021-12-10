@@ -11,15 +11,15 @@
         <% else %>
             <%= link_to 'Attend', attend_event_path, class: "btn" %>
         <% end %>
-    <% elsif @event.private == true && @event.invitations.where(invitee_id: current_user.id) %>
-        <% if @invitation.accepted == true %>
-            <%= link_to 'Reject', reject_invitation_path(@invitation.id), class: "invite reject-btn btn" %>
-        <% elsif @invitation.accepted == false %>
-            <%= link_to 'Accept', accept_invitation_path(@invitation.id), class: "invite accept-btn btn" %>
-        <% elsif @invitation.accepted == nil %>
-            <%= link_to 'Reject', reject_invitation_path(@invitation.id), class: "invite reject-btn btn" %>
-            <%= link_to 'Accept', accept_invitation_path(@invitation.id), class: "invite accept-btn btn" %>
-        <% end %>
+        <% elsif @invitation != nil && @event.private == true && @event.invitations.where(invitee_id: current_user.id) %>
+            <% if @invitation.accepted == true %>
+                <%= link_to 'Reject', reject_invitation_path(@invitation.id), class: "invite reject-btn btn" %>
+            <% elsif @invitation.accepted == false %>
+                <%= link_to 'Accept', accept_invitation_path(@invitation.id), class: "invite accept-btn btn" %>
+            <% elsif @invitation.accepted == nil %>
+                <%= link_to 'Reject', reject_invitation_path(@invitation.id), class: "invite reject-btn btn" %>
+                <%= link_to 'Accept', accept_invitation_path(@invitation.id), class: "invite accept-btn btn" %>
+            <% end %>
     <% end %>
 
         <div>
