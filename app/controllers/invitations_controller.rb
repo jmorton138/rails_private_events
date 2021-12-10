@@ -6,6 +6,7 @@ class InvitationsController < ApplicationController
     def new
         @invitation = Invitation.new
         @event = Event.find(params[:event_id])
+        @users = User.order(:last_name)
     end
 
     def create
