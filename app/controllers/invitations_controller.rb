@@ -7,7 +7,13 @@ class InvitationsController < ApplicationController
     def new
         @invitation = Invitation.new
         @event = Event.find(params[:event_id])
-        @users = User.order(:last_name)
+        # find users who havnt' already been invited to this event
+        @users = User.order(:last_name).map do |user|
+            user if @event.invitations.where(invitee_id: user.id).length == 0
+        end
+        @users
+
+
     end
 
     def create
