@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     def index
         @events = Event.where(private: true)
         @past_events = Event.past.where(private: nil).or(Event.past.where(private: false))
-        @future_events = Event.future.where(private: nil).or(Event.past.where(private: false))
+        @future_events = Event.future.where(private: nil).or(Event.future.where(private: false))
     end
 
     def show

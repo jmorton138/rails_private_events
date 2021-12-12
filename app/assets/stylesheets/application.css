@@ -127,3 +127,15 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: rgb(95, 3, 3);
 }
+
+.tab2, .tab3 {
+    display: none;
+}
+
+.tab1-toggle {
+    background: orangered;
+
+}
+.tab2-toggle, .tab3-toggle {
+    background-color: white;
+}

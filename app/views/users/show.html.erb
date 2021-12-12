@@ -1,13 +1,13 @@
 <div class="wrapper">
+    <%= link_to 'Edit Profile', edit_user_registration_path %>
     <div class="profile-nav">
-        <div class="profile-nav-item">Your Events</div>
-        <div class="profile-nav-item">Upcoming Events</div>
-        <div class="profile-nav-item">Attended Events</div>
+        <div class="profile-nav-item tab1-toggle">Your Events</div>
+        <div class="profile-nav-item tab2-toggle">Upcoming Events</div>
+        <div class="profile-nav-item tab3-toggle">Attended Events</div>
     </div>
 
-    <h1><%= @user.first_name %> <%= @user.last_name %>'s created events</h1>
-
-    <div class="events">
+    <div class="events tab1">
+        
         <% @events.each do |event| %>
             <div class="card">
             <div class="evnt-img">
@@ -24,22 +24,25 @@
 
 <% if @user.attended_events.length > 0 %>
     <div class="upcoming-container">
-        <h1>Upcoming Events:(public and invited distinction?)</h1>
-        <div class="events">
-    
+        <div class="events tab2">
+        <% i = 0 %>
             <% @user.attended_events.each do |event| %>
                 <% if event.event_date > Date.today %>
+                <% i += 1 %>
                 <div class="card">
-                <div class="evnt-img">
-                    <%= image_tag(event.event_image, style:'width:100%') %>
-                </div> 
-                <div class="container">
-                    <h2><%= event.name %></h2>
-                    <h3>Date: <%= event.event_date %></h3>
-                    <%= link_to 'See event', event_path(event), class: "evnt-info" %>
+                    <div class="evnt-img">
+                        <%= image_tag(event.event_image, style:'width:100%') %>
+                    </div> 
+                    <div class="container">
+                        <h2><%= event.name %></h2>
+                        <h3>Date: <%= event.event_date %></h3>
+                        <%= link_to 'See event', event_path(event), class: "evnt-info" %>
+                    </div>
                 </div>
-            </div>
                 <% end %>
+            <% end %>
+            <% if i == 0 %>
+            0 attended events
             <% end %>
         </div>
     </div>

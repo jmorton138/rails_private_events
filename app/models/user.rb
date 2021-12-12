@@ -9,6 +9,8 @@ class User < ApplicationRecord
   
   has_many :invites, class_name: "Invitation", foreign_key: :invitee_id
 
+  has_one_attached :avatar
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

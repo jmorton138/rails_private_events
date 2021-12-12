@@ -2,18 +2,17 @@
 <div class="wrapper">
 
 <div class="profile-nav">
-    <div class="profile-nav-item">Pending:</div>
-    <div class="profile-nav-item">Accepted</div>
-    <div class="profile-nav-item">Rejected</div>
+    <div class="profile-nav-item tab1-toggle">Pending:</div>
+    <div class="profile-nav-item tab2-toggle">Accepted</div>
+    <div class="profile-nav-item tab3-toggle">Rejected</div>
 </div>
 
-    <div class="events">
-            
-        <div>
-            <h1>Pending:</h1>
-        </div>
+    <div class="events tab1">
+        <% i = 0 %>
         <% @invitations.each do |invite| %>
+
             <% if invite.accepted == nil %>
+            <% i += 1 %>
             <div class="card">
             <div class="evnt-img">
                     <%= image_tag(event.event_image, style:'width:100%') %>
@@ -26,16 +25,18 @@
             </div>
             <% end %>
         <% end %>
+        <% if i == 0 %>
+            0 pending invitations
+        <% end %>
     </div>
 
 
-    <div class="events">
-        <div>
-            <h1>Accepted:</h1>
-        </div>
+    <div class="events tab2">
+        <% j = 0 %>
 
         <% @invitations.each do |invite| %>
             <% if invite.accepted == true %>
+            <% j += 1 %>
             <div class="card">
             <div class="evnt-img">
                     <%= image_tag(event.event_image, style:'width:100%') %>
@@ -48,25 +49,32 @@
             </div>
             <% end %>
         <% end %>
+        <% if j == 0 %>
+            0 accepted invitations
+        <% end %>
     </div>
 
-    <div class="events">
-        <div>
-            <h1>Rejected:</h1>
-        </div>
+    <div class="events tab3">
+        <% k = 0 %>
+
         <% @invitations.each do |invite| %>
             <% if invite.accepted == false %>
-            <div class="card">
-            <div class="evnt-img">
-                    <%= image_tag(event.event_image, style:'width:100%') %>
-            </div>                 
-                <div class="container">
-                    <h2><%= invite.event.name %></h2>
-                    <h3>Date: <%= invite.event.event_date %></h3>
-                    <%= link_to 'See event', event_path(invite.event), class: "evnt-info" %>
+                <% k += 1 %>
+
+                <div class="card">
+                <div class="evnt-img">
+                        <%= image_tag(event.event_image, style:'width:100%') %>
+                </div>                 
+                    <div class="container">
+                        <h2><%= invite.event.name %></h2>
+                        <h3>Date: <%= invite.event.event_date %></h3>
+                        <%= link_to 'See event', event_path(invite.event), class: "evnt-info" %>
+                    </div>
                 </div>
-            </div>
             <% end %>
+        <% end %>
+        <% if k == 0 %>
+            0 rejected invitations
         <% end %>
     </div>
 
