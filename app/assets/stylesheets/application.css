@@ -134,7 +134,8 @@ input[type=submit]:hover {
 }
 
 .tab1-toggle {
-    background: orangered;
+    background: linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63));
+    color: white;
 
 }
 .tab2-toggle, .tab3-toggle {

@@ -30,9 +30,14 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 function tab1Toggle() {
-    document.querySelector('.tab1-toggle').style.background = "orangered";
+    document.querySelector('.tab1-toggle').style.background = "linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63))";
+    document.querySelector('.tab1-toggle').style.color = "white";
+
     document.querySelector('.tab2-toggle').style.background = "white";
+    document.querySelector('.tab2-toggle').style.color = "black";
+
     document.querySelector('.tab3-toggle').style.background = "white";
+    document.querySelector('.tab3-toggle').style.color = "black";
 
     const tab1Section = document.querySelector('.tab1')
     tab1Section.style.display = "grid";
@@ -47,9 +52,15 @@ function tab1Toggle() {
 }
 
 function tab2Toggle() {
-    document.querySelector('.tab2-toggle').style.background = "orangered";
+    document.querySelector('.tab2-toggle').style.background = "linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63))";
+    document.querySelector('.tab2-toggle').style.color = "white";
+
     document.querySelector('.tab1-toggle').style.background = "white";
+    document.querySelector('.tab1-toggle').style.color = "black";
+
+    
     document.querySelector('.tab3-toggle').style.background = "white";
+    document.querySelector('.tab3-toggle').style.color = "black";
 
     const tab2Section = document.querySelector('.tab2')
     tab2Section.style.display = "grid";
@@ -65,9 +76,14 @@ function tab2Toggle() {
 }
 
 function tab3Toggle() {
-    document.querySelector('.tab3-toggle').style.background = "orangered";
+    document.querySelector('.tab3-toggle').style.background = "linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63))";
+    document.querySelector('.tab3-toggle').style.color = "white";
+
     document.querySelector('.tab2-toggle').style.background = "white";
+    document.querySelector('.tab2-toggle').style.color = "black";
+
     document.querySelector('.tab1-toggle').style.background = "white";
+    document.querySelector('.tab1-toggle').style.color = "black";
 
     const tab3Section = document.querySelector('.tab3')
     tab3Section.style.display = "grid";

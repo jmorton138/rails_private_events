@@ -22,14 +22,17 @@
 
 .profile-nav {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-gap: 10px;
     justify-content: space-between;
     list-style: none;
     margin-bottom: 10px;
     .profile-nav-item {
-        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 5px;
         text-decoration: none;
+        font-weight: bold;
+        box-shadow: 3px 3px 5px grey;
         text-align: center;
         padding: 10px 10%;
     }
