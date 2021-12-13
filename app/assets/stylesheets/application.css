@@ -37,6 +37,7 @@ a {
 nav {
     font-size: 30px;
     display: flex;
+    flex-wrap: wrap;
     background: linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63));
 
 }
@@ -62,7 +63,7 @@ nav {
 }
 
 .wrapper {
-    margin: 100px 300px;
+    margin: 100px 20%;
 }
 
 .invite-btns {
@@ -96,8 +97,8 @@ nav {
 
 .events {
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    grid-gap: 80px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 20px;
 
 }
 

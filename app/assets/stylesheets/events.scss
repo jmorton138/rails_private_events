@@ -21,9 +21,12 @@
 }
 
 .profile-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 10px;
     justify-content: space-between;
     list-style: none;
+    margin-bottom: 10px;
     .profile-nav-item {
         border: 1px solid black;
         text-decoration: none;
