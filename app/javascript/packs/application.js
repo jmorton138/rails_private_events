@@ -27,6 +27,11 @@ document.addEventListener("turbolinks:load", function() {
     if (tab3Btn !=  null) {
         tab3Btn.addEventListener('click', () => tab3Toggle())
     }
+
+    const menuBtn = document.querySelector('.navToggle')
+    if (menuBtn != null) {
+        menuBtn.addEventListener('click', () => navToggle())
+    }
 });
 
 function tab1Toggle() {
@@ -96,4 +101,13 @@ function tab3Toggle() {
     const tab2Section = document.querySelector('.tab2')
     tab2Section.style.display = "none";
 
+}
+
+function navToggle() {
+    const navbar = document.querySelector('nav')
+        if (navbar.style.display == "flex") {
+            navbar.style.display = "none";
+        } else {
+            navbar.style.display = "flex";
+        };
 }
