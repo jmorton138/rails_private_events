@@ -18,6 +18,10 @@
     /* border: 1px solid red; */
 
 }
+
+.wrapper {
+    margin: 100px 20%;
+}
 body {
     margin: 0;
 }
@@ -78,9 +82,14 @@ nav {
         grid-template-columns: 1fr;
     }
 
-    .events {
+    .events, .event-show {
         grid-template-columns: 1fr;
     }
+
+    .evnt-img {
+        order: -1;
+    }
+
 
     .navToggle {
         display: block;
@@ -95,6 +104,27 @@ nav {
 
     }
 
+
+
+
+
+}
+
+@media (max-width: 900px) {
+    .form, .wrapper {
+        margin: 25px 20px;
+        padding-left: 0px;
+
+    }
+ 
+
+
+    .event-show {
+        padding: 10px;
+    }
+
+
+
 }
 
 .card {
@@ -103,9 +133,7 @@ nav {
     box-shadow: 3px 3px 5px grey;
 }
 
-.wrapper {
-    margin: 100px 20%;
-}
+
 
 .invite-btns {
     display: grid;

@@ -4,18 +4,35 @@
 
 
 .form {
-    border: 1px solid rgb(255, 30, 0)red;
+    border: 1px solid rgb(255, 30, 0);
     border-radius: 10px;
     box-shadow: 5px 5px 5px grey;
-    padding: 70px;
-    margin: 100px 25% !important; 
+    padding: 10%;
+    margin: 100px 25%; 
 
     form {
-        input {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: start;
+        input[type=submit] {
+            width: 100%;
+        }
+        * {
             padding: 15px;
             margin: 20px;
-            display: block;
             border-radius: 8px;
+            width: 90%;
+        }
+        .check-contain, input[type=file] {
+            margin: 7px;
+        }
+        .check {
+            width: 20px;
+            justify-self: end;
+            margin: 0;
+            padding: 0;
+            transform: scale(2);
         }
     }
 }
