@@ -49,11 +49,39 @@ nav {
 .nav-link:hover {
     background: black;
 }
-.nav-link a {
+.nav-link a, .navToggle {
     color: white;
     text-decoration: none;
     font-weight: 300;
     box-shadow: none;
+}
+
+.navToggle {
+    display: none;
+}
+
+@media (max-width: 1250px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profile-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .events {
+        grid-template-columns: 1fr;
+    }
+
+    .navToggle {
+        display: block;
+    }
+
+    .menu-item {
+        display: none;
+    }
 }
 
 .card {
@@ -97,7 +125,8 @@ nav {
 
 .events {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
     grid-gap: 20px;
 
 }
@@ -110,7 +139,6 @@ nav {
 
 .events .container {
     padding: 20px;
-    border: 1px solid black;
 }
 
 .evnt-info {
