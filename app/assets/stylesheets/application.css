@@ -15,12 +15,13 @@
  */
 * {
     font-family: Arial, Helvetica, sans-serif;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 
 }
 
 .wrapper {
     margin: 100px 20%;
+    margin-bottom: 0px;
 }
 body {
     margin: 0;
@@ -187,7 +188,7 @@ nav {
 }
 
 input[type=submit] {
-    padding: 20px;
+    padding: 10px 0px;
     color: white;
     background-color: black;
     border-radius: 5px;
@@ -211,3 +212,71 @@ input[type=submit]:hover {
     background-color: white;
 }
 
+ .devise-form {
+    margin: auto;
+    margin-left: 35%;
+    width: 50%;
+  }
+  .devise-form form {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr);
+    margin: 10px 0px;
+
+  }
+
+  .devise-form form input {
+    width: 60%;
+  }
+
+  .log-in-btn {
+        margin-top: 7px;
+        width: 60%;
+        text-align: center;
+        padding: 10px 0px;
+        font-size: 20px;
+  }
+  .devise-form form input[type=checkbox] {
+        width: 5%;
+        margin: 0px;
+        transform: scale(2);
+  }
+
+  .sign-in-btns a {
+      color: #551a8B;
+      border: none;
+      text-decoration: underline;
+      box-shadow: none;
+      padding: 0;
+      font-weight: 400;
+
+
+  }
+
+  @media (max-width: 600px) {
+    .devise-form {
+      width: 90%;
+      margin-left: auto;
+    }
+
+    .devise-form .field, .actions{
+        width: 80%;
+    }
+
+    .devise-form form input {
+      width: 100%;
+      border: 1px solid rgb(58, 57, 57);
+      border-radius: 3px;
+
+    }
+    .log-in-btn {
+      border-radius: 20px !important;
+    }
+
+    .sign-in-btns a {
+      width: 80%;
+    }
+    .devise-form form input[type=checkbox] {
+      width: 5%;
+    }
+
+  }
