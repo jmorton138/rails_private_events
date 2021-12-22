@@ -24,6 +24,7 @@
 }
 body {
     margin: 0;
+    /* background-color: rgb(252, 247, 229); */
 }
 
 a {
@@ -98,6 +99,7 @@ nav {
         font-weight: 300;
         box-shadow: none;
         background: linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63));
+        /* navy */
         font-size: 30px;
         text-align: center;
 
@@ -129,6 +131,8 @@ nav {
 
 .card {
     border: 1px solid rgb(44, 39, 39);
+    background-color: white;
+
     border-radius: 5px;
     box-shadow: 3px 3px 5px grey;
 }
