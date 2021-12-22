@@ -1,12 +1,18 @@
 <div class="wrapper form">
 
     <%= form_with model: @event do |f| %>
+  
+        <h2>Edit your event</h2>
         <%= f.text_field :name, required: true %>
         <%= f.date_field :event_date, required: true %>
+        <%= f.text_field :location, required: true %>
         <%= f.text_field :details, required: true %>
         <%= f.file_field :event_image %>
-        Check the box to make this event private:
-        <%= f.check_box :private %>
+        <div>
+            Check the box to make this event private:
+            <%= f.check_box :private %>
+        </div>
+
         <%= f.submit 'Submit' %>
     <% end %>
 </div>

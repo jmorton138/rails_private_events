@@ -6,7 +6,10 @@
             </div>
 
             <div>
-                <h3>Date:<%= @event.event_date %></h3>
+                <h3>Date: <%= @event.event_date %></h3>
+            </div>
+            <div>
+                <h3>Location: <%= @event.location %></h3>
             </div>
             <div class="creator-options">
                 <% if @event.creator == current_user %>
