@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_10_121016) do
+ActiveRecord::Schema.define(version: 2021_12_22_104035) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_121016) do
     t.string "name"
     t.boolean "private"
     t.text "details"
+    t.string "location"
     t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
