@@ -2,9 +2,10 @@
     <%= form_with model: @event do |f| %>
         <h1>Create a new event</h1>
 
-        <%= f.text_field :name, required: true %>
+        <%= f.text_field :name, required: true, placeholder: "Event name" %>
         <%= f.date_field :event_date, required: true %>
-        <%= f.text_field :details, required: true %>
+        <%= f.text_field :location, required: true, placeholder: "Location" %>
+        <%= f.text_field :details, required: true, placeholder: "Details" %>
         <%= f.file_field :event_image, required: true %>
         
         <div class="check-contain">
