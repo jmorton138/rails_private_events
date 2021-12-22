@@ -1,5 +1,6 @@
 
 <div class="wrapper">
+    <% if @future_events.length > 0 %>
     <h1>Upcoming Events</h1>
 
     <div class="events future-events">
@@ -16,6 +17,9 @@
                 </div>
             <% end %>
     </div>
+    <% end %>
+
+    <% if @past_events.length > 0 %>
     <h1>Past Events</h1>
 
     <div class="events past-events">
@@ -32,6 +36,7 @@
             </div>
         <% end %>
     </div>
+    <% end %>
 
 
 </div>
