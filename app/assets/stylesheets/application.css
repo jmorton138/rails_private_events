@@ -18,6 +18,11 @@
 
 }
 
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+
 .wrapper {
     margin: 100px 20%;
     margin-bottom: 0px;
@@ -182,10 +187,24 @@ nav {
 
 .events .container {
     padding: 20px;
+    padding-top: 5px;
 }
+.name h2 {
+    margin-bottom: 3px;
+}
+
+.events .container h3 {
+    margin-top: 0px;
+}
+
 
 .evnt-info {
     display: block;
+}
+
+.evnt-info:hover {
+    background: linear-gradient(rgb(44, 39, 39), rgb(70, 63, 63));
+    color: white;
 }
 
 input[type=submit] {
