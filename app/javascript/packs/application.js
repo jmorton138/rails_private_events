@@ -104,10 +104,13 @@ function tab3Toggle() {
 }
 
 function navToggle() {
+    const hero = document.querySelector('.hero')
     const navbar = document.querySelector('nav')
         if (navbar.style.display == "flex") {
             navbar.style.display = "none";
+            hero.style.display = "block";
         } else {
             navbar.style.display = "flex";
+            hero.style.display ="none";
         };
 }
