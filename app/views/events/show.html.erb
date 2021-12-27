@@ -20,6 +20,7 @@
                     </div>
                 <% end %>
             </div>
+
             <div class="accept-btns">
             <% if @event.private == nil || @event.private == false %>
                 <% if @event.event_attendees.include?(current_user) %>
@@ -38,10 +39,12 @@
                 <% end %>
             <% end %>
             </div>
+
         </div>
 
         <div class="evnt-img">
             <%= image_tag(@event.event_image, style:'width:100%') %>
+
         </div>
         <% if @event.event_attendees.length > 0 %>
             <div>
@@ -54,9 +57,13 @@
             </div>
         <% end %>
 
-    <div>
+    <div class="details">
     <h4>Details:</h4>
-    <p><%= @event.details %></p>
+    <p><i><%= @event.details %></i></p>
+    </div>
+</div>
+
+
 </div>
                 
 

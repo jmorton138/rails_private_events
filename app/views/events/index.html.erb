@@ -1,4 +1,10 @@
-
+<div class="hero">
+    <div class="hero-text">
+        <h1>Eventdim</h1>
+        <p><b>Host, find, and attend <br> completely imaginary events <br> for free.</b></p>
+    </div>
+    
+</div>
 <div class="wrapper">
     <% if @future_events.length > 0 %>
     <h1>Upcoming Events</h1>
@@ -7,7 +13,7 @@
             <% @future_events.each do |event| %>
                 <div class="card event-card">
                 <div class="evnt-img">
-                    <%= image_tag(event.event_image, style:'max-height: 100%; height: auto;') unless event.event_image[0].nil? %>
+                    <%= image_tag(event.event_image, style:'max-height: 100%; height: auto;') unless event.event_image.nil? %>
                 </div>                    
                 <div class="container">
                         <h2><%= event.name %></h2>
