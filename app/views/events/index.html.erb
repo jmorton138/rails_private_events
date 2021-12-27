@@ -12,16 +12,16 @@
     <div class="events future-events">
             <% @future_events.each do |event| %>
                 <div class="card event-card">
-                <div class="evnt-img">
-                    <%= image_tag(event.event_image, style:'max-height: 100%; height: auto;') unless event.event_image.nil? %>
-                </div> 
-                <div class="container name">
-                    <h2><%= event.name %></h2>  
-                </div>                 
-                <div class="container">
-                        <h3>Date: <%= event.event_date %></h3>
-                        <%= link_to 'See event', event_path(event), class: "evnt-info" %>
-                </div>
+                    <div class="evnt-img">
+                        <%= image_tag(event.event_image, style:'max-height: 100%; height: auto;') unless event.event_image.nil? %>
+                    </div> 
+                    <div class="container name">
+                        <h2><%= event.name %></h2>  
+                    </div>                 
+                    <div class="container">
+                            <h3>Date: <%= event.event_date %></h3>
+                            <%= link_to 'See event', event_path(event), class: "evnt-info" %>
+                    </div>
                 </div>
             <% end %>
     </div>

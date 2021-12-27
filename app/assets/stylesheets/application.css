@@ -277,9 +277,9 @@ input[type=submit]:hover {
   }
 
   .hero {
-    height: 800px;
+    height: 600px;
     background-image: url('/assets/pexels-salo-al-16408.jpg') ;
-    background-position: bottom;
+    background-position: center 80%;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
