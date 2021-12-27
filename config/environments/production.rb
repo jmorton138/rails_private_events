@@ -121,5 +121,6 @@ Rails.application.configure do
     # Use Cloudinary.
     config.active_storage.service = :cloudinary
 
- 
+    config.serve_static_assets = true
+    config.assets.compile = true
 end
