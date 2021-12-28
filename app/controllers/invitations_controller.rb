@@ -11,7 +11,7 @@ class InvitationsController < ApplicationController
         @users = User.order(:last_name).map do |user|
             user if @event.invitations.where(invitee_id: user.id).length == 0 && user != @event.creator
         end
-        @users=@users.compact
+        @users = @users.compact
 
 
     end
@@ -34,6 +34,10 @@ class InvitationsController < ApplicationController
         @invitation = Invitation.find(params[:id])
         @invitation.accepted = false
         @invitation.save
+        @event = Event.find(@invitation.event_id)
+        if current_user.attended_events.where(id: @event.id)
+            current_user.attended_events.delete(@event)
+        end
         redirect_to invitations_path
     end
 
