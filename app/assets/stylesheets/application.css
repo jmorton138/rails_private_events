@@ -154,7 +154,8 @@ nav {
 }
 
 .reject-btn {
-    background: linear-gradient(rgb(255, 30, 0) 50%, rgba(255, 68, 0, 0.918));
+    /* background: linear-gradient(rgb(255, 30, 0) 50%, rgba(255, 68, 0, 0.918)); */
+    background: white;
 
 }
 .reject-btn:hover {
@@ -163,7 +164,8 @@ nav {
 }
 
 .accept-btn {
-    background-color: teal;
+    /* background-color: teal; */
+    background: white;
 }
 
 .accept-btn:hover {

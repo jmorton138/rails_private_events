@@ -1,10 +1,11 @@
-
-<% if @users[0] != nil %>
-    <%= form_with url: event_invitations_path, class: "invites-frm", method: :post do |form| %>
-        <%= form.collection_check_boxes :invitee_ids, @users, :id, :first_name, include_hidden: false %>
-        <%= submit_tag("Send invite(s)") %>
+<div class="send-invites">
+    <% if @users[0] != nil %>
+        <%= form_with url: event_invitations_path, class: "invites-frm", method: :post do |form| %>
+            <%= form.collection_check_boxes :invitee_ids, @users, :id, :first_name, include_hidden: false %>
+            <%= submit_tag("Send invite(s)") %>
+        <% end %>
+    <% else %>
+        No available users to invite
     <% end %>
-<% else %>
-    No available users to invite
-<% end %>
+</div>
 

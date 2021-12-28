@@ -4,14 +4,21 @@
 
 .invites-frm {
     display: grid;
-    margin: 100px 25%;
+    margin: 100px 35%;
     grid-template-columns: 1fr 5fr;
     grid-gap: 20px;
     font-size: 30px;
+    box-shadow: 3px 3px 10px grey;
+    border-radius: 5px;
+    padding: 40px;
     input[type=checkbox] {
         margin-left: 12px;
         margin-top: 12px;
         transform: scale(3);
+        
+    }
+    input[type=submit] {
+        padding: 10px 20px;
     }
     
 
@@ -21,3 +28,4 @@
 .invite-search {
     text-align: center;
 }
+
