@@ -1,3 +1,6 @@
+
+
+
 <div class="send-invites">
     <% if @users[0] != nil %>
         <%= form_with url: event_invitations_path, class: "invites-frm", method: :post do |form| %>
@@ -5,7 +8,9 @@
             <%= submit_tag("Send invite(s)") %>
         <% end %>
     <% else %>
-        No available users to invite
+        <div class="container no-invites">
+            <h1>No available users to invite</h1>
+        </div>
     <% end %>
 </div>
 

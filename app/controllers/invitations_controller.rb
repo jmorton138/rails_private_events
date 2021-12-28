@@ -7,11 +7,11 @@ class InvitationsController < ApplicationController
     def new
         @invitation = Invitation.new
         @event = Event.find(params[:event_id])
-        # find users who havnt' already been invited to this event
+        # find users who havnt' already been invited to this event,not the host, and not already attending
         @users = User.order(:last_name).map do |user|
-            user if @event.invitations.where(invitee_id: user.id).length == 0
+            user if @event.invitations.where(invitee_id: user.id).length == 0 && user != @event.creator
         end
-        @users
+        @users=@users.compact
 
 
     end
