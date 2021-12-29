@@ -228,7 +228,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: rgb(95, 3, 3);
+    background-color: rgb(2, 2, 78);
 }
 
 .tab2, .tab3 {
@@ -261,15 +261,23 @@ input[type=submit]:hover {
   }
 
   .log-in-btn {
-        margin-top: 7px;
-        width: 60%;
+        margin-top: 15px;
+        width: 61%;
         text-align: center;
         padding: 10px 0px;
         font-size: 20px;
+        border: 1px solid grey;
   }
 
   .log-in-btn:hover {
-      background-color: red;
+      background-color: blue;
+      color: white;
+  }
+
+  .actions input[type=submit] {
+      width: 61%;
+      margin-top: 15px;
+
   }
   .devise-form form input[type=checkbox] {
         width: 5%;
