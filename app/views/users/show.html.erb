@@ -9,13 +9,13 @@
         
         <% @events.each do |event| %>
             <div class="card">
-            <div class="evnt-img">
-                    <%= image_tag(event.event_image, style:'height: 50%;') %>
-            </div> 
-            <div class="container">
-                    <h2><%= event.name %></h2>
-                    <h3>Date: <%= event.event_date %></h3>
-                    <%= link_to 'See event', event_path(event), class: "evnt-info" %>
+                <div class="evnt-img">
+                        <%= image_tag(event.event_image) %>
+                </div> 
+                <div class="container">
+                        <h2><%= event.name %></h2>
+                        <h3>Date: <%= event.event_date %></h3>
+                        <%= link_to 'See event', event_path(event), class: "evnt-info" %>
                 </div>
             </div>
         <% end %>
@@ -35,7 +35,7 @@
                 <% i += 1 %>
                 <div class="card">
                     <div class="evnt-img">
-                        <%= image_tag(event.event_image, style:'height: 50%;') %>
+                        <%= image_tag(event.event_image) %>
                     </div> 
                     <div class="container">
                         <h2><%= event.name %></h2>
@@ -60,7 +60,7 @@
             <% j += 1 %>
             <div class="card">
                 <div class="evnt-img">
-                    <%= image_tag(event.event_image, style:'height: 50%;') %>
+                    <%= image_tag(event.event_image) %>
                 </div> 
                 <div class="container">
                     <h2><%= event.name %></h2>
